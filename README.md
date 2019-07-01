@@ -21,9 +21,13 @@ Download & Build the Demo App:
 
 2. Build this application using maven.
 
+<pre>
+
 $ cd secure-spark-streaming-kafka
 
 $ mvn clean package
+
+</pre>
 
 3. If your application is built successfully, you can observe the mentioned output.
 
@@ -42,7 +46,7 @@ Create the required file & permission:
 5. Once you have the uber jar available in the client node, the next step is to create a jaas.conf file for JAAS configuration for Kerberos access. As per Apache Kafka Documentation, Kafka uses the Java Authentication and Authorization Service (JAAS) for SASL configuration.
 
 Sample jaas.conf:
-
+<pre>
 KafkaClient {
     com.sun.security.auth.module.Krb5LoginModule required
     useKeyTab=true
@@ -52,7 +56,7 @@ KafkaClient {
     serviceName="kafka"
     principal="user@MY.DOMAIN.COM";
 };
-
+</pre>
 Modify keytab & principal value to your actual value. KafkaServer is the section name in the JAAS file used by each KafkaServer/Broker. This section provides SASL configuration options for the broker including any SASL client connections made by the broker for inter-broker communication.
 
 6. Also, check the permission on the created jaas.conf and keytab files to avoid file permission exceptions.
@@ -60,7 +64,7 @@ Modify keytab & principal value to your actual value. KafkaServer is the section
 Execute the Spark Application:
 
 7. Once all the above steps are completed successfully, we have to execute the spark2-submit command.
-
+<pre>
  SPARK_KAFKA_VERSION=0.10 spark2-submit \
 --num-executors 2 \ 
 --master yarn \ 
@@ -73,7 +77,7 @@ Execute the Spark Application:
 <broker_hostname>:9092 \ 
 <topic_name> \ 
 false
-  
+ </pre>
 Note: Please replace the below-mentioned parameters with actual value.
 
 <broker_hostname> :: Broker hostname.
