@@ -27,13 +27,13 @@ $ mvn clean package
 
 3. If your application is built successfully, you can observe the mentioned output.
 
-<code>
+<pre>
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time: 24.061 s
-</code>
+</pre>
 
 4. After building your application, take the generated uber jar from target/secure-spark-streaming-kafka-1.0-SNAPSHOT-jar-with-dependencies.jar to the spark client node(where you are going to launch the query from).
 
