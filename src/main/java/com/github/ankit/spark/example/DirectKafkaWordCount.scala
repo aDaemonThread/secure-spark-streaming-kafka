@@ -60,7 +60,7 @@ object DirectKafkaWordCount {
       val additionalSslParams = if (isUsingSsl) {
         Map(
           "ssl.truststore.location" -> "/etc/cdep-ssl-conf/CA_STANDARD/truststore.jks",
-          "ssl.truststore.password" -> "cloudera"
+          "ssl.truststore.password" -> "password"
         )
       } else {
         Map.empty
